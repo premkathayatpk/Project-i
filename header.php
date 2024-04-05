@@ -14,3 +14,15 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/index.css">
 </head>
+<body>
+
+  <!-- Header section -->
+  <header>
+    <div class="logo_container">
+      <a href="index.php"><img class="shoe_logo" src="images/logo.png" alt="Logo"></a>
+    </div>
+
+    <div class="search_bar">
+      <i class="fa-solid fa-magnifying-glass search_icon"></i>
+      <input class="search_input" placeholder="Search">
+    </div>
