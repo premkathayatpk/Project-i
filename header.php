@@ -45,3 +45,12 @@
       <a href="kids.php">Kids</a>
       <a href="contactus.php">Contact Us</a>
     </nav>
+    <div class="menu_icon">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </div>
+
+  <script src="js/index.js"></script>
+</body>
+
+</html>
