@@ -26,3 +26,12 @@
       <i class="fa-solid fa-magnifying-glass search_icon"></i>
       <input class="search_input" placeholder="Search">
     </div>
+
+    <div class="action_bar">
+      <a class="action_container" href="login.php">
+        <span class="action_name">Login</span>
+      </a>
+      <a href="cart.php" class="btn"> <i class="fa-solid fa-cart-arrow-down"></i></a>
+      <a href="wishlist.php" class="btn">Wishlist</a>
+    </div>
+  </header>
