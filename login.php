@@ -28,3 +28,12 @@
                     <div class="field ">
                         <input type="submit" class="btn" name="submit" value="Login" required>
                     </div>
+
+                    <div class="links">
+                        Don't have account? <a href="register.php">Sign Up Now</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
