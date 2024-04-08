@@ -8,3 +8,14 @@
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
+
+<body>
+    <div class="container login">
+        <div class="box form-box">
+            <h1 class="head">Login</h1>
+            <div class="wrapper">
+                <form action="" method="post">
+                    <div class="field  input">
+                        <label for="uname">Email/Username</label>
+                        <input type="email" name="uname" id="uname" placeholder="Email/Username" required>
+                    </div>
