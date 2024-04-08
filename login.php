@@ -24,3 +24,7 @@
                         <label for="password">Password</label>
                         <input type="text" name="password" id="password" placeholder="Password" required>
                     </div>
+
+                    <div class="field ">
+                        <input type="submit" class="btn" name="submit" value="Login" required>
+                    </div>
