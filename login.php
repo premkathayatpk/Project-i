@@ -19,3 +19,8 @@
                         <label for="uname">Email/Username</label>
                         <input type="email" name="uname" id="uname" placeholder="Email/Username" required>
                     </div>
+
+                    <div class="field  input">
+                        <label for="password">Password</label>
+                        <input type="text" name="password" id="password" placeholder="Password" required>
+                    </div>
