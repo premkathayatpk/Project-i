@@ -47,3 +47,13 @@ if(isset($_POST['submit'])){
     $password = $_POST['password'];
 
     $sql= "SELECT *from customer where email='$uname' and password ='$password'";
+
+    $result = $conn->query($sql);
+
+if($result -> num_rows>0){
+    //login success
+    echo"success";
+    header("Location: home.php");
+
+    exit();
+}
