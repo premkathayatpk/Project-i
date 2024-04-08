@@ -37,3 +37,13 @@
         </div>
     </div>
 </body>
+</html>
+
+<?php include 'config.php'?>
+
+<?php
+if(isset($_POST['submit'])){
+    $uname= $_POST['uname'];
+    $password = $_POST['password'];
+
+    $sql= "SELECT *from customer where email='$uname' and password ='$password'";
