@@ -26,3 +26,11 @@
       </div>
       </div>
     <hr>
+
+    <div class="copyright">
+      © 2024 www.premkathayat.com.np All rights reserved.
+    </div>
+  </footer>
+</body>
+
+</html>
