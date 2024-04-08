@@ -11,3 +11,18 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/index.css">
 </head>
+
+<body>
+
+  <footer>
+    <div class="footer_container">
+      <div class="footer_column">
+        <h3>ONLINE SHOPPING</h3>
+
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+        <a href="#">Gift Card</a>
+      </div>
+      </div>
+    <hr>
