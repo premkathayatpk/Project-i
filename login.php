@@ -57,3 +57,16 @@ if($result -> num_rows>0){
 
     exit();
 }
+else{
+    //login fail
+
+   
+    header("Location: error.php");
+
+    exit();
+}
+}
+
+
+
+?>
