@@ -81,3 +81,8 @@
   <img src="image/prem.jpg" alt="Admin">
 </div>
 </header>
+
+<script src="js/admin.js"></script>
+</body>
+
+</html>
