@@ -10,3 +10,17 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/admin.css">
 </head>
+<body>
+
+  <!-- navbar -->
+
+  <div class="navbar">
+    <div class="nav-logo">
+      <a href="index.php">
+        <span class="icon">
+          <img src="image/logo.png" alt="icone">
+        </span>
+        <br>
+        <span class="logo-title"> Shoe Store</span>
+      </a>
+    </div>
