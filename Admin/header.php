@@ -62,3 +62,9 @@
       </a>
     </div>
   </div>
+
+  <!-- Header section -->
+  <header class="header">
+    <div class="menu-icon">
+      <i class="fa-solid fa-bars"></i>
+    </div>
