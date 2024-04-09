@@ -55,3 +55,10 @@
           <i class="fa-solid fa-book"></i> </span>
         Report
       </a>
+
+      <a href="login.php">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+      </a>
+    </div>
+  </div>
