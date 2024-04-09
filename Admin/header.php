@@ -24,3 +24,15 @@
         <span class="logo-title"> Shoe Store</span>
       </a>
     </div>
+
+    <div class="nav-items">
+      <a href="index.php">
+        <span class="icon">
+          <i class="fa-solid fa-house"></i> </span>
+        Dashboard
+      </a>
+      <a href="product.php">
+        <span class=" icon">
+          <i class="fa-solid fa-layer-group"></i> </span>
+        Product
+      </a>
