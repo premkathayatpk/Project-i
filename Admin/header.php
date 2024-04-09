@@ -68,3 +68,9 @@
     <div class="menu-icon">
       <i class="fa-solid fa-bars"></i>
     </div>
+
+    
+    <div class="search">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+<input type="text" placeholder="Search here">
