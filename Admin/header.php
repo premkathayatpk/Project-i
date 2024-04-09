@@ -36,3 +36,17 @@
           <i class="fa-solid fa-layer-group"></i> </span>
         Product
       </a>
+
+      <a href="order.php">
+        <span class="icon">
+          <i class="fa-solid fa-cart-shopping"></i> </span>
+        Order
+      </a>
+
+
+      <a href="customer.php">
+        <span class="icon">
+          <i class="fa-solid fa-users"></i>
+        </span>
+        Customer
+      </a>
