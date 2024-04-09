@@ -50,3 +50,8 @@
         </span>
         Customer
       </a>
+      <a href="report.php">
+        <span class="icon">
+          <i class="fa-solid fa-book"></i> </span>
+        Report
+      </a>
