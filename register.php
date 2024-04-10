@@ -58,3 +58,8 @@
 
                         </div>
                     </div>
+
+                    <div class="field  input">
+                        <label for="email">Email/Username</label>
+                        <input type="email" name="email" id="email" placeholder="Email/Username" required>
+                    </div>
