@@ -90,5 +90,16 @@
 
 </html>
 
-                    
+<?php  include 'config.php'  ?>
+
+<?php 
+if(isset($_POST['submit'])){
+$fname= $_POST['firstName'];
+$lname= $_POST['lastName'];
+$address= $_POST['address'];
+$country= $_POST['country'];
+$zipcode= $_POST['zipcode'];
+$mobile= $_POST['mobile'];
+$email= $_POST['email'];
+$password= $_POST['password'];           
 
