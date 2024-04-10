@@ -30,3 +30,14 @@
                         <label for="address">Address</label>
                         <input type="text" name="address" id="address" placeholder="Address " required>
                     </div>
+
+                    <div class="field  input">
+                        <label for="country">Country</label>
+                        <input type="text" name="country" id="country" placeholder="Your Country" required>
+                    </div>
+
+                    
+                    <div class="field  input">
+                        <label for="zipcode">Zipcode</label>
+                        <input type="text" name="zipcode" id="zipcode" placeholder="Zipcode" required>
+                    </div>
