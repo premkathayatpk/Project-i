@@ -68,3 +68,8 @@
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password" placeholder="Password" required>
                     </div>
+
+                    <div class="field  input">
+                        <label for="mobile">Phone Number</label>
+                        <input type="number" name="mobile" id="mobile" placeholder="Phone Number" required>
+                    </div>
