@@ -25,3 +25,8 @@
                         <label for="lastName">Last Name</label>
                         <input type="text" name="lastName" id="lastName" placeholder="Last Name" required>
                     </div>
+
+                    <div class="field  input">
+                        <label for="address">Address</label>
+                        <input type="text" name="address" id="address" placeholder="Address " required>
+                    </div>
