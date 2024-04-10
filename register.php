@@ -101,5 +101,18 @@ $country= $_POST['country'];
 $zipcode= $_POST['zipcode'];
 $mobile= $_POST['mobile'];
 $email= $_POST['email'];
-$password= $_POST['password'];           
+$password= $_POST['password'];   
+
+$sql= "Insert into customer (firstname,lastname,address,country,zipcode,mobile,email,password) values ('$fname','$lname','$address','$country', '$zipcode','$mobile','$email','$password')  ";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+
+}
+$conn->close();
+
+?>
 
