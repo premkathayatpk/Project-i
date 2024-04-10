@@ -41,3 +41,20 @@
                         <label for="zipcode">Zipcode</label>
                         <input type="text" name="zipcode" id="zipcode" placeholder="Zipcode" required>
                     </div>
+
+                    <div class="field  input ">
+                        <label for="gender">Gender</label>
+                        <div class="gender">
+                            <label for="male" class="radio-inline">
+                                <input type="radio" name="gender" id="male" value="m" required>
+                                Male
+                            </label>
+                            <label for="female" class="radio-inline">
+                                <input type="radio" name="gender" id="female" value="f" required>
+                                Female</label>
+                            <label for="other" class="radio-inline">
+                                <input type="radio" name="gender" id="other" value="o" required>
+                                Others</label>
+
+                        </div>
+                    </div>
