@@ -20,3 +20,8 @@
                         <label for="firstName">First Name</label>
                         <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
                     </div>
+
+                    <div class="field  input">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" name="lastName" id="lastName" placeholder="Last Name" required>
+                    </div>
