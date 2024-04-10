@@ -9,3 +9,14 @@
     <link rel="stylesheet" href="css/login.css">
 
 </head>
+
+<body>
+    <div class="container register">
+        <div class="box form-box">
+            <header>Sign Up</header>
+            <div class="wrapper">
+                <form action="" method="post">
+                    <div class="field  input">
+                        <label for="firstName">First Name</label>
+                        <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
+                    </div>
