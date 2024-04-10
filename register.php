@@ -73,3 +73,22 @@
                         <label for="mobile">Phone Number</label>
                         <input type="number" name="mobile" id="mobile" placeholder="Phone Number" required>
                     </div>
+
+                    <div class="field ">
+                        <input type="submit" class="btn" name="submit" value="Singn Up" autocomplete="off" required>
+                    </div>
+
+                    <div class="links">
+                        Already a member? <a href="login.php">Sign In</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+                    
+
