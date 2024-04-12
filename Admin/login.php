@@ -32,4 +32,23 @@ require 'header.php'
                         <input type="submit" class="btn" name="submit" value="Login" required>
                     </div>
 
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+</html>
+
+
+<?php 
+require ("../config.php");
+
+if(isset($_POST['submit'])){
+$username =$_POST['uname'];
+$password=$_POST['password'];
+
 
