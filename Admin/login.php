@@ -22,3 +22,14 @@ require 'header.php'
                         <label for="uname">Username</label>
                         <input type="text" name="uname" id="uname" placeholder="Username" required>
                     </div>
+
+                    <div class="field  input">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" placeholder="Password" required>
+                    </div>
+
+                    <div class="field ">
+                        <input type="submit" class="btn" name="submit" value="Login" required>
+                    </div>
+
+
