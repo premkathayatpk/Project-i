@@ -11,3 +11,14 @@ require 'header.php'
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
+
+<body>
+    <div class="container login">
+        <div class="box form-box">
+            <header>Login</header>
+            <div class="wrapper">
+                <form action="" onsubmit="return invalid()" method="post">
+                    <div class="field  input">
+                        <label for="uname">Username</label>
+                        <input type="text" name="uname" id="uname" placeholder="Username" required>
+                    </div>
