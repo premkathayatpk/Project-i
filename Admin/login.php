@@ -60,5 +60,16 @@ if($result -> num_rows == 1){
     //login success
     header("Location: index.php");
     exit();
+}
+else{
+    //login fail
 
+   
+    header("Location: error.php");
+    exit();
+}
+conn_>close();
+}
+
+?>
 
