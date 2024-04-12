@@ -51,4 +51,14 @@ if(isset($_POST['submit'])){
 $username =$_POST['uname'];
 $password=$_POST['password'];
 
+    
+$query = "select *from admin where username = '$username' and password='$password' ";
+
+$result = $conn->query($query);
+
+if($result -> num_rows == 1){
+    //login success
+    header("Location: index.php");
+    exit();
+
 
