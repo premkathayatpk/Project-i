@@ -21,3 +21,20 @@ include '../config.php';
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
+<body>
+    <?php
+    if (isset($message)) {
+        foreach ($message as $message) {
+            echo '<div class="message"><span>' . $message . '</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i> </div>';
+        }
+        ;
+    }
+    ;
+    ?>
+    <div class="form-container">
+        <h2>Add a product</h2>
+
+        <div class="messages">
+
+        </div>
