@@ -106,3 +106,28 @@ $errors[] = 'Please provide product price';
 if (!is_dir(UPLOAD_DIR)) {
 mkdir(UPLOAD_DIR, 0777, TRUE);
 }
+$file_name = $_FILES['file']['name'];
+$file_tmp = $_FILES['file']['tmp_name'];
+$tmp = explode(".", $file_name);
+$file_ext = end($tmp);
+
+$extensions = array("jpeg", "jpg", "png");
+if (in_array($file_ext, $extensions) === false) {
+    $errors[] = "Extension not allowed, please select jpeg ot png file";
+}
+if (empty($errors)) {
+    $insert_product = mysqli_query($conn, "INSERT INTO product(name,price,image,size,brand,category) VALUES('$product_Name','$product_Price','$file_name','$product_size','$product_brand','$product_category')");
+    if ($insert_product == 1) {
+        move_uploaded_file($file_tmp, UPLOAD_DIR."/$file_name");
+        $productSaved = TRUE;
+        $message[] = 'Product added successfully.';
+        $product_Name = '';
+        $product_Price = '';
+    }else{
+        $message[] = 'Error adding product to database';
+    }
+} else {
+    print_r($errors[0]);
+}
+}
+?>
