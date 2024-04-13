@@ -38,3 +38,39 @@ include '../config.php';
         <div class="messages">
 
         </div>
+
+        <form action="" method="post" enctype="multipart/form-data">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="<?php echo isset($product_Name) ? $product_Name : ''; ?>">
+
+            <label for="price">Price</label>
+            <input type="number" id="price" name="price" min="0"
+                value="<?php echo isset($product_Price) ? $product_Price : ''; ?>">
+            <label for="file">Size</label>
+                    <input type="text" name="size" placeholder="Size" required>
+                    
+                    <label for="file">Brand</label>
+                    <input type="text" name="brand" placeholder="Brand Name	" required>
+
+                   
+                    <label for="file">Stock</label>
+                    <input type="number" name="qty" placeholder="No. of Stock" required>
+                   
+
+                    <label for="file"> Category</label>
+
+                    <select name="category">
+                        <option value='men'>Men</option>
+                        <option value='women'>Women</option>
+                        <option value='kids'>Kids</option>
+
+                    </select>
+                    <br>
+                    <br>
+                    <label for="file">Image</label>
+            <input type="file" id="file" name="file">
+
+            <button type="submit" id="submit" name="submit" class="button">
+                Submit
+            </button>
+        </form>
