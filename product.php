@@ -74,3 +74,35 @@ include '../config.php';
                 Submit
             </button>
         </form>
+
+        </div>
+
+
+
+<div class="product-search">
+    <input type="text" placeholder="Search product here">
+</div>
+
+
+
+</body>
+
+</html>
+<?php
+$productSaved = FALSE;
+if (isset($_POST['submit'])) {
+$errors = array();
+$product_Name = isset($_POST["name"]) ? $_POST['name'] : '';
+$product_Price = isset($_POST["price"]) ? $_POST['price'] : '';
+$product_size = isset($_POST["size"]) ? $_POST['size'] : '';
+$product_brand = isset($_POST["brand"]) ? $_POST['brand'] : '';
+$product_category = isset($_POST["category"]) ? $_POST['category'] : '';
+if (empty($product_Name)) {
+$errors[] = 'Please provide a product name';
+}
+if ($product_Price == 0) {
+$errors[] = 'Please provide product price';
+}
+if (!is_dir(UPLOAD_DIR)) {
+mkdir(UPLOAD_DIR, 0777, TRUE);
+}
