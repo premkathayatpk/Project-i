@@ -218,3 +218,44 @@ section {
    display: inline-block;
    width: auto;
 }
+.shopping-cart .checkout-btn a.disabled {
+   pointer-events: none;
+   opacity: .5;
+   user-select: none;
+   background-color: var(--red);
+}
+
+.checkout-form form {
+   padding: 2rem;
+   border-radius: .5rem;
+   background-color: var(--bg-color);
+}
+
+.checkout-form form .flex {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+}
+
+.checkout-form form .flex .inputBox {
+   flex: 1 1 40rem;
+}
+
+.checkout-form form .flex .inputBox span {
+   font-size: 2rem;
+   color: var(--black);
+}
+
+.checkout-form form .flex .inputBox input,
+.checkout-form form .flex .inputBox select {
+   width: 100%;
+   background-color: var(--white);
+   font-size: 1.7rem;
+   color: var(--black);
+   border-radius: .5rem;
+   margin: 1rem 0;
+   padding: 1.2rem 1.4rem;
+   text-transform: none;
+   border: var(--border);
+
+}
