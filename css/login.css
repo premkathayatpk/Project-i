@@ -103,3 +103,23 @@ body {
 .btn:hover {
     background-color: aqua;
 }
+.submit {
+    width: 100%;
+}
+
+.links {
+    margin-bottom: 15px;
+}
+
+.links a {
+    color: orange;
+}
+
+.gender {
+    display: flex;
+    justify-content: space-between;
+}
+
+.radio-inline {
+    width: 30%;
+}
