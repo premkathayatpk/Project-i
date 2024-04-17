@@ -19,3 +19,36 @@ body {
     justify-content: center;
 
 }
+.login {
+    margin-top: 150px;
+}
+
+.register {
+    margin-top: 20px;
+}
+
+.head {
+    text-align: center;
+    margin: 50px;
+}
+
+.box {
+    background: #972727;
+    display: flex;
+    color: #ffffff;
+    flex-direction: column;
+    padding: 25px 25px;
+    border-radius: 20px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border: 2px solid #ffffff;
+
+
+
+}
+
+.form-box {
+    width: 450px;
+    margin: 0px 10px;
+
+}
