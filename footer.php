@@ -15,16 +15,57 @@
 <body>
 
   <footer>
+    <center>
+      <h1>About Us</h1>
+    </center>
     <div class="footer_container">
-      <div class="footer_column">
-        <h3>ONLINE SHOPPING</h3>
 
-        <a href="#">Men</a>
-        <a href="#">Women</a>
-        <a href="#">Kids</a>
-        <a href="#">Gift Card</a>
+      <div class="profile">
+        <div class="prem">
+          <img src="images/links/prem.jpg" alt="Prem">
+        </div>
+        <p>
+          My name is prem kathayat. I am from kathmandu nepal. My name is prem kathayat. I am from kathmandu nepal.
+          My name is prem kathayat. I am from kathmandu nepal. My name is prem kathayat. I am from kathmandu nepal.
+        </p>
+        <div class="links">
+          <a href="https://www.facebook.com/"> <img src="images/links/fb.png" alt="Prem">
+          </a>
+          <a href="https://www.facebook.com/"> <img src="images/links/insta.jpg" alt="Prem">
+          </a>
+          <a href="https://www.facebook.com/"> <img src="images/links/linkedin.png" alt="Prem">
+          </a>
+          <a href="https://www.facebook.com/"> <img src="images/links/github.png" alt="Prem">
+          </a>
+        </div>
       </div>
+
+      <div class="profile">
+        <div class="anuj">
+          <img src="images/links/anuj.jpg" alt="Prem">
+        </div>
+        <p>
+          My name is Anuj Shrestha.
+          I am from kathmandu nepal.
+          My name is Anuj Shrestha. I am from kathmandu nepal.
+          My name is Anuj Shrestha.
+          I am from kathmandu nepal.
+          My name is Anuj Shrestha. I am from kathmandu nepal.
+        </p>
+        <div class="links">
+          <a href="https://www.facebook.com/"> <img src="images/links/fb.png" alt="Prem">
+          </a>
+          <a href="https://www.facebook.com/"> <img src="images/links/insta.jpg" alt="Prem">
+          </a>
+          <a href="https://www.facebook.com/"> <img src="images/links/linkedin.png" alt="Prem">
+          </a>
+          <a href="https://www.facebook.com/"> <img src="images/links/github.png" alt="Prem">
+          </a>
+        </div>
       </div>
+
+    </div>
+    </div>
     <hr>
 
     <div class="copyright">

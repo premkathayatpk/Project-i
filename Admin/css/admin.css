@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+  box-sizing: border-box;
+
+}
+
+/*--------- Navigation------*/
+.navbar {
+  position: fixed;
+  display: block;
+  width: 220px;
+  height: 100%;
+  background: rgb(44, 44, 115);
+  padding: 0;
+}
+
+.nav-logo {
+  border-bottom: 3px solid gold;
+  margin-bottom: 40px;
+  text-align: center;
+
+}
+
+.nav-logo a img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.nav-logo a {
+  font-size: 25px;
+  font-weight: 700;
+  text-decoration: none;
+  color: orange;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.nav-items a {
+
+  width: 100%;
+  color: #ffff;
+  font-size: 20px;
+  font-weight: 600;
+  display: block;
+  text-decoration: none;
+  padding: 15px 10px 15px 10px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+
+
+.nav-items a:hover {
+  background-color: white;
+  color: rgb(30, 40, 182);
+}
+
+
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-options {
+  display: none;
+  overflow: auto;
+  margin-left: 20px;
+}
+
+.dropdown:hover .dropdown-options {
+  display: block;
+}
+
+/* -----------Header Section--------------- */
+.header {
+  padding-top: 15px;
+  padding-left: 10px;
+  margin-left: 220px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-icon {
+  margin: 10px;
+  margin-left: 10px;
+  font-size: 1.8rem;
+  position: relative;
+  display: none;
+}
+
+
+
+
+
+.search {
+  border: 1px solid black;
+  border-radius: 40px;
+  width: 400px;
+  font-size: 20px;
+  font-weight: 900;
+  padding: 8px;
+}
+
+
+.search input {
+  height: 100%;
+  margin-left: 5px;
+  width: 90%;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+
+
+.user img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+/* ===================== Main ===================== */
+.main {
+  margin-left: 220px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#home {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: aquamarine;
+  width: 100%;
+}
+
+#home .card {
+  background-color: antiquewhite;
+  display: flex;
+  width: 100px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+
+/* --------Customer page---------- */
+.customer {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.customer h1 {
+  text-align: center;
+}
+
+/* Styles for customer search */
+.customer-search {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.customer-search input[type="text"] {
+  width: 50%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+/* ====================== Responsive Design ========================== */
+
+@media screen and (max-width: 1024px) {
+
+  .navbar {
+    display: none;
+    margin-top: -10px;
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+
+  .header,
+  .main {
+    margin: 10px 15px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu-icon {
+    display: block;
+    margin-left: 10px;
+    width: 60px;
+    color: rgb(123, 76, 76);
+
+  }
+
+  .menu-icon i {
+    cursor: pointer;
+  }
+
+  .navbar.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main {
+    margin-left: 40px;
+    display: flex;
+  }
+
+  .search {
+    height: 50px;
+    width: 300px;
+    display: flex;
+    padding: 0;
+  }
+
+  .search i {
+    padding: 15px 0px 0px 5px;
+  }
+
+  .search input {
+    height: 45px;
+    width: 80%;
+
+  }
+
+  #product {
+    padding: 10px;
+  }
+
+
+
+  @media screen and (max-width: 500px) {
+
+    .header,
+    .main {
+      margin: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .main .home {
+      display: flex;
+    }
+
+
+  }
+}

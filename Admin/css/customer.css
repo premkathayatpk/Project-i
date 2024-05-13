@@ -1,0 +1,61 @@
+/* Styles for customer table */
+.customer {
+  margin: 20px auto;
+  width: 80%;
+  margin-left: 250px;
+}
+
+.customer h1 {
+  text-align: center;
+}
+
+.customer-search {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.customer-search input[type="text"] {
+  width: 50%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.customer-table {
+  text-align: center;
+}
+
+.customer-table table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  /* Ensure equal column width */
+}
+
+.customer-table th,
+.customer-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  width: 16.66%;
+  /* Equal width for each column (6 columns) */
+  /* Adjust the width percentage based on your specific requirements */
+}
+
+.customer-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.customer-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.customer-table td:last-child {
+  text-align: center;
+}
+
+/* Table design enhancements */
+.customer-table th,
+.customer-table td {
+  font-size: 14px;
+}

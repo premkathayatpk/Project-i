@@ -1,3 +1,40 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    // User is not logged in, redirect to login page
+    header("Location: login.php");
+    exit();
+}
+
+// Include your database connection file
+include 'config.php';
+
+// Retrieve the first name from the database based on the username
+$username = $_SESSION['uname'];
+$u_id = $_SESSION['u_id'];
+
+$stmt = $conn->prepare("SELECT firstname FROM customer WHERE email = ?");
+$stmt1 = $conn->prepare("SELECT u_id FROM customer WHERE email = ?");
+$stmt->bind_param("s", $username);
+$stmt1->bind_param("i", $u_id);
+
+$stmt->execute();
+$stmt->store_result();
+
+if ($stmt->num_rows > 0) {
+    $stmt->bind_result($firstname);
+    $stmt->fetch();
+} else {
+    // Handle the case where the username is not found in the database
+    $firstname = "Unknown";
+}
+
+$stmt->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,12 +51,13 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
 
   <!-- Header section -->
   <header>
     <div class="logo_container">
-      <a href="index.php"><img class="shoe_logo" src="images/logo.png" alt="Logo"></a>
+      <a href="index1.php"><img class="shoe_logo" src="images/logo.png" alt="Logo"></a>
     </div>
 
     <div class="search_bar">
@@ -28,18 +66,20 @@
     </div>
 
     <div class="action_bar">
-      <a class="action_container" href="login.php">
-        <span class="action_name">Login</span>
+      Welcome, <?php echo $firstname; ?>!
+
+      <a class="action_container" href="logout.php">
+        <span class="action_name">Logout</span>
       </a>
-      <a href="cart.php" class="btn"> <i class="fa-solid fa-cart-arrow-down"></i></a>
-      <a href="wishlist.php" class="btn">Wishlist</a>
+      <a href="cart.php" class="cart_btn"> <i class="fa-solid fa-cart-arrow-down"></i></a>
+      <a href="wishlist.php" class="Wish_btn">Wishlist</a>
     </div>
   </header>
 
   <!-- Navbar section -->
   <div class="nav">
     <nav class="nav_bar">
-      <a href="index.php">Home</a>
+      <a href="index1.php">Home</a>
       <a href="men.php">Men</a>
       <a href="women.php">Women</a>
       <a href="kids.php">Kids</a>

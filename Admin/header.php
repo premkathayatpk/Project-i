@@ -10,6 +10,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/admin.css">
 </head>
+
 <body>
 
   <!-- navbar -->
@@ -50,18 +51,22 @@
         </span>
         Customer
       </a>
+
       <a href="report.php">
         <span class="icon">
-          <i class="fa-solid fa-book"></i> </span>
-        Report
+        <i class="fa-solid fa-message"></i> </span>
+        Message
       </a>
 
-      <a href="login.php">
+
+
+      <a href="logout.php">
         <i class="fa-solid fa-right-from-bracket"></i>
         Logout
       </a>
     </div>
   </div>
+
 
   <!-- Header section -->
   <header class="header">
@@ -69,20 +74,23 @@
       <i class="fa-solid fa-bars"></i>
     </div>
 
-    
+
     <div class="search">
 
-<i class="fa-solid fa-magnifying-glass"></i>
-<input type="text" placeholder="Search here">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search here">
 
-</div>
 
-<div class="user">
-  <img src="image/prem.jpg" alt="Admin">
-</div>
-</header>
+    </div>
 
-<script src="js/admin.js"></script>
+    <div class="user">
+      <img src="image/prem.jpg" alt="Admin">
+    </div>
+  </header>
+
+
+
+  <script src="js/admin.js"></script>
 </body>
 
 </html>

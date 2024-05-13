@@ -22,7 +22,7 @@
 
                     <div class="field  input">
                         <label for="password">Password</label>
-                        <input type="text" name="password" id="password" placeholder="Password" required>
+                        <input type="password" name="password" id="password" placeholder="Password" required>
                     </div>
 
                     <div class="field ">
@@ -37,36 +37,37 @@
         </div>
     </div>
 </body>
+
 </html>
 
-<?php include 'config.php'?>
+<?php 
+session_start(); // Starting the session
 
-<?php
+include 'config.php';
+
 if(isset($_POST['submit'])){
-    $uname= $_POST['uname'];
+    $uname = $_POST['uname'];
     $password = $_POST['password'];
 
-    $sql= "SELECT *from customer where email='$uname' and password ='$password'";
+    // Using prepared statement to prevent SQL injection
+    $stmt = $conn->prepare("SELECT * FROM customer WHERE email = ? AND password = ?");
+    $stmt->bind_param("ss", $uname, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    $result = $conn->query($sql);
+    if($result->num_rows > 0){
+        // Login successful, fetch user ID and set session variables
+        $user = $result->fetch_assoc();
+        $_SESSION['uname'] = $user['email'];
+        $_SESSION['u_id'] = $user['u_id']; // Assuming u_id is the column name for user ID
+        $_SESSION['loggedin'] = true;
 
-if($result -> num_rows>0){
-    //login success
-    echo"success";
-    header("Location: home.php");
-
-    exit();
+        header("Location: index1.php");
+        exit();
+    } else {
+        // Login failed, display an error message
+        echo "<script>alert('Invalid Username/Password');</script>";
+        exit();
+    }
 }
-else{
-    //login fail
-
-   
-    header("Location: error.php");
-
-    exit();
-}
-}
-
-
-
 ?>

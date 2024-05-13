@@ -32,37 +32,10 @@
                     </div>
 
                     <div class="field  input">
-                        <label for="country">Country</label>
-                        <input type="text" name="country" id="country" placeholder="Your Country" required>
-                    </div>
-
-                    
-                    <div class="field  input">
-                        <label for="zipcode">Zipcode</label>
-                        <input type="text" name="zipcode" id="zipcode" placeholder="Zipcode" required>
-                    </div>
-
-                    <div class="field  input ">
-                        <label for="gender">Gender</label>
-                        <div class="gender">
-                            <label for="male" class="radio-inline">
-                                <input type="radio" name="gender" id="male" value="m" required>
-                                Male
-                            </label>
-                            <label for="female" class="radio-inline">
-                                <input type="radio" name="gender" id="female" value="f" required>
-                                Female</label>
-                            <label for="other" class="radio-inline">
-                                <input type="radio" name="gender" id="other" value="o" required>
-                                Others</label>
-
-                        </div>
-                    </div>
-
-                    <div class="field  input">
                         <label for="email">Email/Username</label>
                         <input type="email" name="email" id="email" placeholder="Email/Username" required>
                     </div>
+
 
                     <div class="field  input">
                         <label for="password">Password</label>
@@ -90,29 +63,37 @@
 
 </html>
 
-<?php  include 'config.php'  ?>
+<?php
+include 'config.php';
 
-<?php 
-if(isset($_POST['submit'])){
-$fname= $_POST['firstName'];
-$lname= $_POST['lastName'];
-$address= $_POST['address'];
-$country= $_POST['country'];
-$zipcode= $_POST['zipcode'];
-$mobile= $_POST['mobile'];
-$email= $_POST['email'];
-$password= $_POST['password'];   
+if (isset($_POST['submit'])) {
+    $fname = $_POST['firstName'];
+    $lname = $_POST['lastName'];
+    $address = $_POST['address'];
+    $mobile = $_POST['mobile'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-$sql= "Insert into customer (firstname,lastname,address,country,zipcode,mobile,email,password) values ('$fname','$lname','$address','$country', '$zipcode','$mobile','$email','$password')  ";
+    // Hash the password
+    // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-  }
+    // Prepare and bind SQL statement
+    $sql = "INSERT INTO customer (firstname, lastname, address, mobile, email, password) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssssss", $fname, $lname, $address, $mobile, $email, $password);
 
+    if ($stmt->execute()) {
+        // Account creation successful
+        echo '<script>alert("Account created successfully");</script>';
+        echo '<script>window.location.href = "login.php";</script>';
+        exit;
+    } else {
+        // Error handling
+        echo '<script>alert("Error: ' . $conn->error . '");</script>';
+    }
+
+    $stmt->close();
 }
+
 $conn->close();
-
 ?>
-

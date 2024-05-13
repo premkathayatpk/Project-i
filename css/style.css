@@ -28,6 +28,7 @@ html {
    overflow-x: hidden;
 }
 
+/* ---Container--- */
 .container {
    max-width: 1200px;
    margin: 0 auto;
@@ -140,11 +141,13 @@ section {
    width: 100%;
 }
 
+/* --product box ----- */
 .products .box-container {
    display: grid;
    grid-template-columns: repeat(auto-fit, 35rem);
    gap: 1.5rem;
    justify-content: center;
+   padding: 10px;
 }
 
 .products .box-container .box {
@@ -156,16 +159,20 @@ section {
 }
 
 .products .box-container .box img {
-   height: 25rem;
+   height: 200px;
+   width: 300px;
 }
 
 .products .box-container .box h3 {
    margin: 1rem 0;
-   font-size: 2.5rem;
+   font-size: 2rem;
    color: var(--black);
 }
 
-.products .box-container .box .price {
+.products .box-container .box .price,
+.name,
+.category,
+.size {
    font-size: 2.5rem;
    color: var(--black);
 }
