@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2024 at 02:18 PM
+-- Generation Time: May 13, 2024 at 08:03 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -115,7 +115,8 @@ CREATE TABLE `message` (
 --
 
 INSERT INTO `message` (`mid`, `email`, `message`) VALUES
-(1, 'user1@gmail.com', 'hii');
+(1, 'user1@gmail.com', 'hii'),
+(2, 'kathayatprem275@gmail.com', 'I like this website.');
 
 -- --------------------------------------------------------
 
@@ -144,7 +145,8 @@ CREATE TABLE `order` (
 
 INSERT INTO `order` (`id`, `name`, `number`, `email`, `method`, `house_no`, `street`, `city`, `state`, `total_products`, `total_price`, `order_date`) VALUES
 (15, 'user1', '0000000000', 'user1@gmail.com', 'cash on delivery', '12', 'lalitpur', 'Kathmandu, Nepal', 'bagmati', 'Nike 2 (1) , gs (1) , shaker 1 (1) , jodan 1 (1) ', '10233', '2024-05-12 17:28:11'),
-(18, 'ii', '44', 'premkathayat13@gmail.com', 'cash on delivery', '7', 'ktm', 'ktm', 'up', 'jodan 1 (2) , shaker 1 (1) , Nike 2 (1) ', '14000', '2024-05-12 17:29:26');
+(18, 'ii', '44', 'premkathayat13@gmail.com', 'cash on delivery', '7', 'ktm', 'ktm', 'up', 'jodan 1 (2) , shaker 1 (1) , Nike 2 (1) ', '14000', '2024-05-12 17:29:26'),
+(19, 'prem', '9827633522', 'kathayatprem275@gmail.com', 'cash on delivery', '345', 'main', 'ktm', 'bagmati', 'jodan 1 (2) , shaker 1 (1) , Nike 2 (1) ', '14000', '2024-05-13 09:58:52');
 
 -- --------------------------------------------------------
 
@@ -205,7 +207,8 @@ CREATE TABLE `wishlist` (
 --
 
 INSERT INTO `wishlist` (`id`, `name`, `price`, `image`, `quantity`, `size`, `brand`, `category`, `u_id`) VALUES
-(21, 'jodan 1', '4000', 'g1.jpg', 1, '10', 'jodan', 'Women', 5);
+(21, 'jodan 1', '4000', 'g1.jpg', 1, '10', 'jodan', 'Women', 5),
+(22, 'shaker 1', '2000', 'sh1.jpg', 1, '3', 'Shaker Shoe', 'Kids', 3);
 
 --
 -- Indexes for dumped tables
@@ -278,13 +281,13 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `mid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `mid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -296,7 +299,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Constraints for dumped tables
