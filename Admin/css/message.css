@@ -1,0 +1,38 @@
+table {
+  /* display: flex; */
+  margin: 20px 250px 0 250px;
+  width: 80%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  max-height: 100px;
+  /* Set maximum height for the cells */
+  overflow: auto;
+  /* Enable overflow scrolling */
+}
+
+th {
+  background-color: gold;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: darkred;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

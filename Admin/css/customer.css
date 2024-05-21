@@ -9,18 +9,6 @@
   text-align: center;
 }
 
-.customer-search {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.customer-search input[type="text"] {
-  width: 50%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
 .customer-table {
   text-align: center;
 }
@@ -29,7 +17,6 @@
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
-  /* Ensure equal column width */
 }
 
 .customer-table th,
@@ -37,12 +24,11 @@
   padding: 10px;
   border: 1px solid #ddd;
   width: 16.66%;
-  /* Equal width for each column (6 columns) */
-  /* Adjust the width percentage based on your specific requirements */
 }
 
 .customer-table th {
-  background-color: #f2f2f2;
+  background-color: #03591a;
+  color: white;
   font-weight: bold;
 }
 

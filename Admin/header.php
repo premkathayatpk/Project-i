@@ -1,3 +1,14 @@
+<?php 
+include '../config.php';
+session_start();
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    // User is not logged in, redirect to login page
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,10 +63,10 @@
         Customer
       </a>
 
-      <a href="report.php">
+      <a href="message.php">
         <span class="icon">
         <i class="fa-solid fa-message"></i> </span>
-        Message
+        Feedback
       </a>
 
 
@@ -72,19 +83,6 @@
   <header class="header">
     <div class="menu-icon">
       <i class="fa-solid fa-bars"></i>
-    </div>
-
-
-    <div class="search">
-
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Search here">
-
-
-    </div>
-
-    <div class="user">
-      <img src="image/prem.jpg" alt="Admin">
     </div>
   </header>
 

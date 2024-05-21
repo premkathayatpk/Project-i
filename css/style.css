@@ -159,24 +159,71 @@ section {
 }
 
 .products .box-container .box img {
-   height: 200px;
+   height: 250px;
    width: 300px;
+   border: 1px solid #9999;
+   border-radius: 20px;
+   box-shadow: var(--box-shadow);
 }
 
 .products .box-container .box h3 {
    margin: 1rem 0;
    font-size: 2rem;
-   color: var(--black);
+   color: var(--blue);
+}
+
+.products .box-container .box:hover .brand,
+.products .box-container .box:hover .category,
+.products .box-container .box:hover .size,
+.products .box-container .box:hover .price,
+.products .box-container .box:hover .name,
+.products .box-container .box:hover .btn,
+.products .box-container .box:hover .wd-btn {
+
+   display: block;
+   font-size: 1.5rem;
+   font-weight: 600;
+}
+
+.products .box-container .box:hover img {
+   height: 200px;
+   width: 250px;
+
+}
+
+.products .box-container .box .brand {
+   color: #999;
+   font-size: 2rem;
+   font-weight: 500;
 }
 
 .products .box-container .box .price,
-.name,
-.category,
-.size {
-   font-size: 2.5rem;
-   color: var(--black);
+.products .box-container .box .category,
+.products .box-container .box .size {
+   font-size: 1.75rem;
+   font-weight: 600;
+   color: var(--border);
 }
 
+/* Adjust price color */
+.products .box-container .box .price {
+   color: var(--red);
+}
+
+
+
+/* Initially hide name, category, and button */
+/* .products .box-container .box .brand, */
+.products .box-container .box .category,
+.products .box-container .box .btn,
+.wd-btn {
+   display: none;
+}
+
+
+
+
+/* -----------Shopping cart------------ */
 .shopping-cart table {
    text-align: center;
    width: 100%;
@@ -237,6 +284,7 @@ section {
    background-color: var(--red);
 }
 
+/* ----------Checkout------------ */
 .checkout-form form {
    padding: 2rem;
    border-radius: .5rem;

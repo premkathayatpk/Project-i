@@ -13,10 +13,14 @@
 </head>
 
 <body>
-
+<hr>
   <footer>
     <center>
-      <h1>About Us</h1>
+      <h1 class="abouth">About Us</h1>
+      <pre class="aboutus">
+        This Online Shoe store system is develope by Prem kathayat and Anju shrestha. 
+        For the BCA 4th semester project i. It is a simple CRUD system. 
+      </pre>
     </center>
     <div class="footer_container">
 
@@ -25,17 +29,16 @@
           <img src="images/links/prem.jpg" alt="Prem">
         </div>
         <p>
-          My name is prem kathayat. I am from kathmandu nepal. My name is prem kathayat. I am from kathmandu nepal.
-          My name is prem kathayat. I am from kathmandu nepal. My name is prem kathayat. I am from kathmandu nepal.
+          My name is prem kathayat. I am from kathmandu nepal. 
         </p>
         <div class="links">
           <a href="https://www.facebook.com/"> <img src="images/links/fb.png" alt="Prem">
           </a>
-          <a href="https://www.facebook.com/"> <img src="images/links/insta.jpg" alt="Prem">
+          <a href="https://www.instagram.com/"> <img src="images/links/insta.jpg" alt="Prem">
           </a>
-          <a href="https://www.facebook.com/"> <img src="images/links/linkedin.png" alt="Prem">
+          <a href="https://www.linkedin.com/"> <img src="images/links/linkedin.png" alt="Prem">
           </a>
-          <a href="https://www.facebook.com/"> <img src="images/links/github.png" alt="Prem">
+          <a href="https://www.github.com/"> <img src="images/links/github.png" alt="Prem">
           </a>
         </div>
       </div>
@@ -47,29 +50,27 @@
         <p>
           My name is Anuj Shrestha.
           I am from kathmandu nepal.
-          My name is Anuj Shrestha. I am from kathmandu nepal.
-          My name is Anuj Shrestha.
-          I am from kathmandu nepal.
-          My name is Anuj Shrestha. I am from kathmandu nepal.
+          
         </p>
         <div class="links">
           <a href="https://www.facebook.com/"> <img src="images/links/fb.png" alt="Prem">
           </a>
-          <a href="https://www.facebook.com/"> <img src="images/links/insta.jpg" alt="Prem">
+          <a href="https://www.instagram.com/"> <img src="images/links/insta.jpg" alt="Prem">
           </a>
-          <a href="https://www.facebook.com/"> <img src="images/links/linkedin.png" alt="Prem">
+          <a href="https://www.linkedin.com/"> <img src="images/links/linkedin.png" alt="Prem">
           </a>
-          <a href="https://www.facebook.com/"> <img src="images/links/github.png" alt="Prem">
+          <a href="https://www.github.com/"> <img src="images/links/github.png" alt="Prem">
           </a>
         </div>
       </div>
 
     </div>
     </div>
+    </center>
     <hr>
 
     <div class="copyright">
-      © 2024 www.premkathayat.com.np All rights reserved.
+      © 2024 All rights reserved.
     </div>
   </footer>
 </body>

@@ -14,7 +14,7 @@
         <div class="box form-box">
             <header>Admin Login</header>
             <div class="wrapper">
-                <form action="" onsubmit="return invalid()" method="post">
+                <form action="" method="post">
                     <div class="field  input">
                         <label for="uname">Username</label>
                         <input type="text" name="uname" id="uname" placeholder="Username" required>
@@ -28,10 +28,12 @@
                     </div>
 
                     <div class="field ">
-                        <input type="submit" class="btn" name="submit" value="Login" required>
+                        <input type="submit" class="btn" name="submit" value="Login">
                     </div>
 
-
+                    <div class="goback ">
+                        <a href="../index.php">Go Back to Website</a>
+                    </div>
                 </form>
             </div>
         </div>

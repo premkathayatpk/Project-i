@@ -13,11 +13,7 @@ include 'header.php';
 </head>
 
 <body>
-  <!-- Contact Us section -->
-  <div class="contactus">
-    <div class="contact-banner">
-      <img src="images/contactus.JPG" alt="Contact Us">
-    </div>
+<center>
     <form method="post" action="">
       <div class="contact-email">
         Email:<br>
@@ -36,7 +32,7 @@ include 'header.php';
     </form>
   </div>
 </body>
-
+</center>
 </html>
 
 <?php 

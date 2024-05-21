@@ -1,6 +1,5 @@
 <?php
 require 'header.php';
-require '../config.php';
 ?>
 
 <center>
@@ -48,10 +47,6 @@ if (isset($_GET['delete_id'])) {
         <center>
             <h1>Customers</h1>
         </center>
-
-        <div class="customer-search">
-            <input type="text" placeholder="Search customer here">
-        </div>
 
         <div class="customer-table">
             <table>

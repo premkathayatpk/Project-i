@@ -7,7 +7,7 @@
 }
 
 body {
-    background: url(img/loginback.png);
+    background: url(../image/loginback.png);
     background-size: cover;
 
 
@@ -106,4 +106,16 @@ body {
 
 .links a {
     color: orange;
+}
+
+.goback {
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+.goback a {
+    color: blue;
 }

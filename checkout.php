@@ -1,6 +1,18 @@
 <?php
 include 'header.php';
 
+$u_id = $_SESSION['u_id'];
+$customer_query = $conn->prepare("SELECT * FROM customer WHERE u_id = ?");
+$customer_query->bind_param("i", $u_id);
+$customer_query->execute();
+$customer_result = $customer_query->get_result();
+$customer_data = $customer_result->fetch_assoc();
+
+$name = $customer_data['firstname'].' '.$customer_data['lastname'];
+$number = $customer_data['mobile'];
+$email = $customer_data['email'];
+$address = $customer_data['address'];
+
 if (isset($_POST['order_btn'])) {
     $name = $_POST['name'];
     $number = $_POST['number'];
@@ -10,7 +22,7 @@ if (isset($_POST['order_btn'])) {
     $city = $_POST['city'];
     $street = $_POST['street'];
     $state = $_POST['state'];
-    $u_id = $u_id;
+
     // Retrieve products from the cart for the current user
     $cart_query = $conn->prepare("SELECT * FROM cart WHERE u_id = ?");
     $cart_query->bind_param("i", $u_id);
@@ -19,6 +31,7 @@ if (isset($_POST['order_btn'])) {
 
     $total_price = 0;
     $product_name = [];
+    $action= 'Panding';
 
     if ($cart_result->num_rows > 0) {
         while ($product_item = $cart_result->fetch_assoc()) {
@@ -29,13 +42,12 @@ if (isset($_POST['order_btn'])) {
         $total_products = implode(', ', $product_name);
 
         // Insert order details into the database
-        $detail_query = $conn->prepare("INSERT INTO `order` (name, number, email, method, house_no, street, city, state, total_products, total_price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $detail_query->bind_param("ssssissssd", $name, $number, $email, $method, $house_no, $street, $city, $state, $total_products, $total_price);
+        $detail_query = $conn->prepare("INSERT INTO `order` (name, number, email, method, house_no, street, city, state, total_products, total_price, action) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+        $detail_query->bind_param("ssssissssds", $name, $number, $email, $method, $house_no, $street, $city, $state, $total_products, $total_price, $action);
         $detail_query->execute();
 
         if ($detail_query) {
             echo "
-           
             <div class='order-message-container'>
                 <div class='message-container'>
                     <h3>Thank you for shopping!</h3>
@@ -51,11 +63,8 @@ if (isset($_POST['order_btn'])) {
                         <p>Your payment mode: <span>$method</span></p>
                     </div>
                      <a href='index1.php' class='btn'>OK</a>
-                    <a href='checkout.php' class='btn'>Continue shopping</a>
                 </div>
             </div>";
-            echo "<script>alert('Thank you for shopping! Your order has been successfully placed.');</script>";
-
         } else {
             echo "Error inserting order details: " . $conn->error;
         }
@@ -96,7 +105,7 @@ if (isset($_POST['order_btn'])) {
             <form action="" method="post">
                 <div class="display-order">
                     <?php
-                    $select_cart = mysqli_query($conn, "SELECT * FROM `cart` where u_id=$u_id");
+                    $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE u_id = $u_id");
                    
                     $total = 0;
                     $grand_total = 0;
@@ -107,8 +116,7 @@ if (isset($_POST['order_btn'])) {
                             echo "<span>{$fetch_cart['name']} ({$fetch_cart['quantity']})</span>";
                         }
                         echo "<span class='grand-total'>Grand Total: $$grand_total/-</span>";
-                    }
-                     else {
+                    } else {
                         echo "<div class='display-order'><span>Your cart is empty!</span></div>";
                     }
                     ?>
@@ -116,15 +124,15 @@ if (isset($_POST['order_btn'])) {
                 <div class="flex">
                     <div class="inputBox">
                         <span>Your Name</span>
-                        <input type="text" placeholder="Name" name="name" required>
+                        <input type="text" placeholder="Name" name="name" value="<?php echo $name; ?>" required>
                     </div>
                     <div class="inputBox">
                         <span>Your Number</span>
-                        <input type="number" placeholder="Phone Number" name="number" required>
+                        <input type="number" placeholder="Phone Number" id="mobile" name="number" value="<?php echo $number; ?>" required>
                     </div>
                     <div class="inputBox">
                         <span>Your Email</span>
-                        <input type="email" placeholder="Email" name="email" required>
+                        <input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
                     </div>
                     <div class="inputBox">
                         <span>Payment Method</span>
@@ -140,7 +148,7 @@ if (isset($_POST['order_btn'])) {
                     </div>
                     <div class="inputBox">
                         <span>City</span>
-                        <input type="text" placeholder="City" name="city" required>
+                        <input type="text" placeholder="City" name="city" value="<?php echo $address; ?>" required>
                     </div>
                     <div class="inputBox">
                         <span>Street</span>
@@ -150,15 +158,33 @@ if (isset($_POST['order_btn'])) {
                         <span>State</span>
                         <input type="text" placeholder="State" name="state" required>
                     </div>
-                    
-                    
-                    </div>
-                    <div class="conformbtn">
-                        <button type="submit" name="order_btn">Confirm</button>
+                </div>
+                <div class="conformbtn">
+                    <button type="submit" onclick="return valid()" name="order_btn">Confirm</button>
                 </div>
             </form>
         </section>
     </div>
+
+    <script>
+        function valid() {
+            let phone = document.getElementById('mobile').value;
+
+            if (!validatePhone(phone)) {
+                alert('Invalid phone number. It must be exactly 10 digits and start with 98.');
+                return false; // Prevent form submission
+            } else {
+                alert('Thank you for shopping! Your order has been successfully placed.');
+                return true; // Allow form submission
+            }
+        }
+
+        function validatePhone(phone) {
+            const phoneRegex = /^98\d{8}$/;
+            return phoneRegex.test(phone);
+        }
+    </script>
+
 </body>
 
 </html>

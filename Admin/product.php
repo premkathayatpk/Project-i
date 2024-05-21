@@ -1,6 +1,5 @@
 <?php
 require('header.php');
-include '../config.php';
 
 $productSaved = FALSE;
 $message = [];
@@ -42,7 +41,6 @@ if (isset($_POST['submit'])) {
         $extensions = array("jpeg", "jpg", "png");
 
         if (in_array($file_ext, $extensions)) {
-            // Check if the product already exists
             $check_product = mysqli_query($conn, "SELECT * FROM product WHERE name='$product_Name'");
             if (mysqli_num_rows($check_product) > 0) {
                 $message[] = 'Product with the same name already exists.';
@@ -86,11 +84,36 @@ if (isset($_POST['submit'])) {
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+         .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+        #toggleButton{
+            cursor: pointer;
+            padding:8px;
+            border:none;
+            border-radius:5px;
+            background-color:green;
+            color:white;
+font-size:20px;
+font-weight:600;
+
+        }
+    </style>
 </head>
 
 <body>
     <center>
-        <div class="form-container">
+
+    <button id="toggleButton">Add Product</button>
+
+<div id="toggleDiv" class="hidden">
+
+<div  class="form-container">
             <h2>Add a Product</h2>
 
             <?php if (!empty($message)) : ?>
@@ -104,13 +127,13 @@ if (isset($_POST['submit'])) {
             <?php endforeach; ?>
             <?php endif; ?>
 
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="" method="post" \>
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name"
+                <input type="text" id="name" name="name" placeholder="Name"
                     value="<?php echo isset($product_Name) ? $product_Name : ''; ?>">
 
                 <label for="price">Price</label>
-                <input type="number" id="price" name="price" min="0"
+                <input type="number" id="price" name="price" placeholder="Price" min="0"
                     value="<?php echo isset($product_Price) ? $product_Price : ''; ?>">
 
                 <label for="size">Size</label>
@@ -132,6 +155,22 @@ if (isset($_POST['submit'])) {
                 <button type="submit" id="submit" name="submit" class="button">Submit</button>
             </form>
         </div>
+
+</div>
+
+<script>
+   document.getElementById('toggleButton').addEventListener('click', function () {
+            var div = document.getElementById('toggleDiv');
+            if (div.classList.contains('hidden')) {
+                div.classList.remove('hidden');
+                div.classList.add('visible');
+            } else {
+                div.classList.remove('visible');
+                div.classList.add('hidden');
+            }
+        });
+</script>
+
 
         <div class="product-list">
             <h2>Product List</h2>
@@ -161,7 +200,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "<td>{$row['category']}</td>";
     echo "<td>
             <a href='edit_product.php?id={$row['id']}'><i class='fas fa-edit'></i></a>
-            <a href='delete_product.php?id={$row['id']}'><i class='fas fa-trash-alt'></i></a>
+            <a href='delete_product.php?id={$row['id']}' onclick='alert(`Delete success`);'><i class='fas fa-trash-alt'></i></a>
           </td>";
     echo "</tr>";
 }

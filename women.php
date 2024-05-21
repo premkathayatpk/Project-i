@@ -96,9 +96,12 @@ if (isset($_POST['add_to_wishlist'])) {
                      <form action="" method="post">
                         <div class="box">
                            <img src="<?php echo "Admin/uploaded_img/" . $fetch_product['image']; ?>" alt="">
-                           <h3>Brand: <?php echo $fetch_product['brand']; ?></h3>
-                           <div class='name'><?php echo $fetch_product['name']; ?></div>
-                           <div class="category"><?php echo $fetch_product['category']; ?></div>
+                           <h3>
+                                <div class='name'><?php echo $fetch_product['name']; ?></div>
+                                </h3>
+                                
+                                <div class="brand"> Brand: <?php echo $fetch_product['brand']; ?></div>
+                           <!-- <div class="category"><?php echo $fetch_product['category']; ?></div> -->
                            <div class="size">Size: <?php echo $fetch_product['size']; ?></div>
                            <div class="price">Rs. <?php echo $fetch_product['price']; ?>/-</div>
 

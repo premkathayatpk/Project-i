@@ -26,12 +26,19 @@
                     </div>
 
                     <div class="field ">
-                        <input type="submit" class="btn" name="submit" value="Login" required>
+                        <input type="submit" class="btn" name="submit" value="Login">
                     </div>
-
+                    <div class="admin ">
+                        <a href="admin/login.php">Login as Admin</a>
+                    </div> 
                     <div class="links">
                         Don't have account? <a href="register.php">Sign Up Now</a>
                     </div>
+
+                    <div class="goback ">
+                        <a href="index.php">Go Back to Website</a> 
+                    </div>    
+                   
                 </form>
             </div>
         </div>
@@ -48,6 +55,7 @@ include 'config.php';
 if(isset($_POST['submit'])){
     $uname = $_POST['uname'];
     $password = $_POST['password'];
+
 
     // Using prepared statement to prevent SQL injection
     $stmt = $conn->prepare("SELECT * FROM customer WHERE email = ? AND password = ?");

@@ -8,7 +8,6 @@
 body {
     background-image: url(../images/loginback.png);
     background-size: cover;
-    background-color: green;
 
 
 }
@@ -111,5 +110,29 @@ body {
 }
 
 .links a {
-    color: orange;
+    color: rgb(255, 225, 0);
+}
+
+.goback {
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 800;
+
+}
+
+.goback a {
+    color: lightblue;
+}
+
+.admin {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.admin a {
+    color: #ccff02;
 }

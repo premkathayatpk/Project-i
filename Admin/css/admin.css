@@ -94,9 +94,6 @@
 }
 
 
-
-
-
 .search {
   border: 1px solid black;
   border-radius: 40px;
@@ -104,6 +101,7 @@
   font-size: 20px;
   font-weight: 900;
   padding: 8px;
+  text-align: center;
 }
 
 
@@ -121,54 +119,9 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  margin-right: 20px;
 }
 
-/* ===================== Main ===================== */
-.main {
-  margin-left: 220px;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-#home {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: aquamarine;
-  width: 100%;
-}
-
-#home .card {
-  background-color: antiquewhite;
-  display: flex;
-  width: 100px;
-  border-radius: 5px;
-  margin: 5px;
-}
-
-
-/* --------Customer page---------- */
-.customer {
-  width: 80%;
-  margin: 20px auto;
-}
-
-.customer h1 {
-  text-align: center;
-}
-
-/* Styles for customer search */
-.customer-search {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.customer-search input[type="text"] {
-  width: 50%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
 
 
 /* ====================== Responsive Design ========================== */

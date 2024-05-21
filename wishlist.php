@@ -71,9 +71,12 @@ if (isset($_GET['remove'])) {
                          <form action="" method="post">
                             <div class="box">
                                 <img src="<?php echo "Admin/uploaded_img/" . $fetch_product['image']; ?>" alt="">
-                                <h3>Brand: <?php echo $fetch_product['brand']; ?></h3>
+                                <h3>
                                 <div class='name'><?php echo $fetch_product['name']; ?></div>
-                                <div class="category"><?php echo $fetch_product['category']; ?></div>
+                                </h3>
+                                
+                                <div class="brand"> Brand: <?php echo $fetch_product['brand']; ?></div>
+                                <!-- <div class="category"><?php echo $fetch_product['category']; ?></div> -->
                                 <div class="size">Size: <?php echo $fetch_product['size']; ?></div>
                                 <div class="price">Rs. <?php echo $fetch_product['price']; ?>/-</div>
 
@@ -84,7 +87,7 @@ if (isset($_GET['remove'])) {
                                 <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
                                 <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
                                 <button type="submit" class="btn" name="add_to_cart">Add to Cart</button>
-                                <a href="wishlist.php?remove=<?php echo $fetch_product['id']; ?>" onclick="return confirm('Remove item from cart?')" class="delete-btn"><i class="fas fa-trash"></i> Remove</a>
+                                <a href="wishlist.php?remove=<?php echo $fetch_product['id']; ?>" onclick="return confirm('Remove item from wishlist?')" class="wd-btn delete-btn"><i class="fas fa-trash"></i> Remove</a>
                             </div>
                         </form>
                 <?php
