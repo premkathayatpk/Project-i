@@ -1,7 +1,6 @@
 <?php
 require('header.php');
 
-$productSaved = FALSE;
 $message = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -29,34 +28,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($errors)) {
-        if (!empty($_FILES['file']['name'])) {
-            $file_name = $_FILES['file']['name'];
-            $file_tmp = $_FILES['file']['tmp_name'];
-            $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
-            $upload_dir = 'uploaded_img/';
-            $target_file = $upload_dir . basename($file_name);
-            
-            $extensions = array("jpeg", "jpg", "png");
+        // Check if product with the same name exists
+        $check_product_query = "SELECT * FROM product WHERE name='$product_Name'";
+        $check_product_result = mysqli_query($conn, $check_product_query);
+        
+        if (mysqli_num_rows($check_product_result) > 0) {
+            $message[] = 'Product with the same name already exists.';
+        } else {
+            if (!empty($_FILES['file']['name'])) {
+                $file_name = $_FILES['file']['name'];
+                $file_tmp = $_FILES['file']['tmp_name'];
+                $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+                $upload_dir = 'uploaded_img/';
+                $target_file = $upload_dir . basename($file_name);
 
-            if (in_array($file_ext, $extensions)) {
-                if (move_uploaded_file($file_tmp, $target_file)) {
-                    $insert_product = mysqli_query($conn, "INSERT INTO product(name, price, image, size, brand, category) VALUES('$product_Name', '$product_Price', '$file_name', '$product_size', '$product_brand', '$product_category')");
-                    if ($insert_product) {
-                        $productSaved = TRUE;
-                        $message[] = 'Product added successfully.';
-                        $product_Name = '';
-                        $product_Price = '';
+                $extensions = array("jpeg", "jpg", "png");
+
+                if (in_array($file_ext, $extensions)) {
+                    if (move_uploaded_file($file_tmp, $target_file)) {
+                        $insert_product = mysqli_query($conn, "INSERT INTO product(name, price, image, size, brand, category) VALUES('$product_Name', '$product_Price', '$file_name', '$product_size', '$product_brand', '$product_category')");
+                        if ($insert_product) {
+                            $message[] = 'Product added successfully.';
+                            $product_Name = '';
+                            $product_Price = '';
+                        } else {
+                            $message[] = 'Error adding product to database';
+                        }
                     } else {
-                        $message[] = 'Error adding product to database';
+                        $message[] = 'Failed to upload file';
                     }
                 } else {
-                    $message[] = 'Failed to upload file';
+                    $message[] = "Extension not allowed, please select JPEG or PNG file";
                 }
             } else {
-                $message[] = "Extension not allowed, please select JPEG or PNG file";
+                $message[] = 'Please upload an image';
             }
-        } else {
-            $message[] = 'Please upload an image';
         }
     } else {
         foreach ($errors as $error) {
@@ -72,7 +78,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
     <meta charset="UTF-8" />
-    <!-- The above 3 meta tags must come first in the head -->
     <title>Product Management</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="css/product.css">
@@ -110,20 +115,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+                <form action="" method="post" enctype="multipart/form-data">
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Name" value="<?php echo htmlspecialchars($product_Name); ?>">
+                    <input type="text" id="name" name="name" placeholder="Name" value="<?php echo isset($product_Name) ? $product_Name : ''; ?>">
                     <label for="price">Price</label>
-                    <input type="number" id="price" name="price" placeholder="Price" min="0" value="<?php echo htmlspecialchars($product_Price); ?>">
+                    <input type="number" id="price" name="price" placeholder="Price" min="0" value="<?php echo isset($product_Price) ? $product_Price : ''; ?>">
                     <label for="size">Size</label>
-                    <input type="text" id="size" name="size" placeholder="Size" required>
+                    <input type="text" id="size" name="size" placeholder="Size" value="<?php echo isset($product_size) ? $product_size : ''; ?>" required>
                     <label for="brand">Brand</label>
-                    <input type="text" id="brand" name="brand" placeholder="Brand Name" required>
+                    <input type="text" id="brand" name="brand" placeholder="Brand Name" value="<?php echo isset($product_brand) ? $product_brand : ''; ?>" required>
                     <label for="category">Category</label>
                     <select name="category">
-                        <option value='Men'>Men</option>
-                        <option value='Women'>Women</option>
-                        <option value='Kids'>Kids</option>
+                        <option value='Men' <?php echo (isset($product_category) && $product_category == 'Men') ? 'selected' : ''; ?>>Men</option>
+                        <option value='Women' <?php echo (isset($product_category) && $product_category == 'Women') ? 'selected' : ''; ?>>Women</option>
+                        <option value='Kids' <?php echo (isset($product_category) && $product_category == 'Kids') ? 'selected' : ''; ?>>Kids</option>
                     </select>
                     <br>
                     <label for="file">Image</label>
@@ -172,7 +177,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         echo "<td>{$row['category']}</td>";
                         echo "<td>
                                 <a href='edit_product.php?id={$row['id']}'><i class='fas fa-edit'></i></a>
-                                <a href='delete_product.php?id={$row['id']}' onclick='alert(`Delete success`);'><i class='fas fa-trash-alt'></i></a>
+                                <a href='delete_product.php?id={$row['id']}' onclick='return confirm(`Are you sure you want to delete this product?`);'><i class='fas fa-trash-alt'></i></a>
                             </td>";
                         echo "</tr>";
                     }
