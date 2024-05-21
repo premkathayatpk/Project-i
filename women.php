@@ -83,7 +83,7 @@ if (isset($_POST['add_to_wishlist'])) {
    ?>
    <div class="container">
       <section class="products">
-         <h1 class="heading">Men Products</h1>
+         <h1 class="heading">Women Products</h1>
          <div class="box-container">
             <?php
             $select_products = mysqli_query($conn, "SELECT * FROM product");
