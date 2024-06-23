@@ -103,8 +103,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <center>
-        <button id="toggleButton">Add Product</button>
-        <div id="toggleDiv" class="hidden">
+        <!-- <button id="toggleButton">Add Product</button> -->
+        <!-- <div id="toggleDiv" class="hidden"> -->
             <div class="form-container">
                 <h2>Add a Product</h2>
                 <?php if (!empty($message)) : ?>
@@ -119,9 +119,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Name" value="<?php echo isset($product_Name) ? $product_Name : ''; ?>">
                     <label for="price">Price</label>
-                    <input type="number" id="price" name="price" placeholder="Price" min="0" value="<?php echo isset($product_Price) ? $product_Price : ''; ?>">
+                    <input type="number" id="price" name="price" placeholder="Price" min="1" value="<?php echo isset($product_Price) ? $product_Price : ''; ?>">
                     <label for="size">Size</label>
-                    <input type="text" id="size" name="size" placeholder="Size" value="<?php echo isset($product_size) ? $product_size : ''; ?>" required>
+                    <input type="number" id="size" name="size" placeholder="Size" min="1" value="<?php echo isset($product_size) ? $product_size : ''; ?>" required>
                     <label for="brand">Brand</label>
                     <input type="text" id="brand" name="brand" placeholder="Brand Name" value="<?php echo isset($product_brand) ? $product_brand : ''; ?>" required>
                     <label for="category">Category</label>

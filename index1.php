@@ -1,12 +1,11 @@
 <?php
-// include 'config.php';
+
+
 include 'header.php';
+// include 'config.php';
 
 // Initialize message array
 $message = [];
-
-// Assuming $u_id is set after user login, this needs to be fetched from session or similar
-$u_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 
 if (isset($_POST['add_to_cart'])) {
     $product_brand = $_POST['product_brand'];
@@ -16,24 +15,21 @@ if (isset($_POST['add_to_cart'])) {
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
     $product_quantity = 1;
+    $u_id=$u_id;
 
-    if ($u_id) {
-        // Using prepared statements to prevent SQL injection
-        $select_cart = $conn->prepare("SELECT * FROM cart WHERE name = ? AND u_id = ?");
-        $select_cart->bind_param("si", $product_name, $u_id);
-        $select_cart->execute();
-        $result = $select_cart->get_result();
-
-        if ($result->num_rows > 0) {
-            $message[] = 'Product already added to cart.';
-        } else {
-            $insert_product = $conn->prepare("INSERT INTO cart (brand, name, category, size, price, image, quantity, u_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            $insert_product->bind_param("ssssssii", $product_brand, $product_name, $product_category, $product_size, $product_price, $product_image, $product_quantity, $u_id);
-            $insert_product->execute();
-            $message[] = 'Product added to cart successfully.';
-        }
+    // Using prepared statements to prevent SQL injection
+    $select_cart = $conn->prepare("SELECT * FROM cart WHERE name = ? and u_id=?");
+    $select_cart->bind_param("si", $product_name,$u_id);
+    $select_cart->execute();
+    $result = $select_cart->get_result();
+    
+    if ($result->num_rows > 0) {
+        $message[] = 'Product already added to cart.';
     } else {
-        $message[] = 'Please login to add products to cart.';
+        $insert_product = $conn->prepare("INSERT INTO cart(brand, name, category, size, price, image, quantity,u_id) VALUES(?, ?, ?, ?, ?, ?, ?,?)");
+        $insert_product->bind_param("ssssssii", $product_brand, $product_name, $product_category, $product_size, $product_price, $product_image, $product_quantity,$u_id);
+        $insert_product->execute();
+        $message[] = 'Product added to cart successfully.';
     }
 }
 
@@ -45,24 +41,21 @@ if (isset($_POST['add_to_wishlist'])) {
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
     $product_quantity = 1;
-
-    if ($u_id) {
-        // Using prepared statements to prevent SQL injection
-        $select_wishlist = $conn->prepare("SELECT * FROM wishlist WHERE name = ? AND u_id = ?");
-        $select_wishlist->bind_param("si", $product_name, $u_id);
-        $select_wishlist->execute();
-        $result = $select_wishlist->get_result();
-
-        if ($result->num_rows > 0) {
-            $message[] = 'Product already added to wishlist.';
-        } else {
-            $insert_product = $conn->prepare("INSERT INTO wishlist (brand, name, category, size, price, image, quantity, u_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            $insert_product->bind_param("ssssssii", $product_brand, $product_name, $product_category, $product_size, $product_price, $product_image, $product_quantity, $u_id);
-            $insert_product->execute();
-            $message[] = 'Product added to wishlist successfully.';
-        }
+    $u_id=$u_id;
+    
+    // Using prepared statements to prevent SQL injection
+    $select_wishlist = $conn->prepare("SELECT * FROM wishlist WHERE name = ? and u_id=?");
+    $select_wishlist->bind_param("si", $product_name,$u_id);
+    $select_wishlist->execute();
+    $result = $select_wishlist->get_result();
+    
+    if ($result->num_rows > 0) {
+        $message[] = 'Product already added to wishlist.';
     } else {
-        $message[] = 'Please login to add products to wishlist.';
+        $insert_product = $conn->prepare("INSERT INTO wishlist(brand, name, category, size, price, image, quantity,u_id) VALUES(?, ?, ?, ?, ?, ?, ?,?)");
+        $insert_product->bind_param("ssssssii", $product_brand, $product_name, $product_category, $product_size, $product_price, $product_image, $product_quantity,$u_id);
+        $insert_product->execute();
+        $message[] = 'Product added to wishlist successfully.';
     }
 }
 ?>
@@ -102,7 +95,8 @@ if (!empty($message)) {
             // Modify the query to include search term
             $sql = "SELECT * FROM product";
             if ($search) {
-                $sql .= " WHERE name LIKE '%$search%' OR brand LIKE '%$search%' OR category LIKE '%$search%' OR size LIKE '$search' OR price LIKE '$search' ";            }
+                $sql .= " WHERE name LIKE '%$search%' OR brand LIKE '%$search%' OR category LIKE '%$search%' OR size LIKE '$search' OR price LIKE '$search' ";          
+              }
 
             $select_products = mysqli_query($conn, $sql);
             if (mysqli_num_rows($select_products) > 0) {

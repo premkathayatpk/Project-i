@@ -53,7 +53,7 @@ if (isset($_POST['order_btn'])) {
                     <h3>Thank you for shopping!</h3>
                     <div class='order-detail'>
                         <span>$total_products</span>
-                        <span class='total'>Total: $$total_price/-</span>
+                        <span class='total'>Total: RS$total_price/-</span>
                     </div>
                     <div class='customer-details'>
                         <p>Your name: <span>$name</span></p>
@@ -115,7 +115,7 @@ if (isset($_POST['order_btn'])) {
                             $grand_total = $total += $total_price;
                             echo "<span>{$fetch_cart['name']} ({$fetch_cart['quantity']})</span>";
                         }
-                        echo "<span class='grand-total'>Grand Total: $$grand_total/-</span>";
+                        echo "<span class='grand-total'>Grand Total: RS$grand_total/-</span>";
                     } else {
                         echo "<div class='display-order'><span>Your cart is empty!</span></div>";
                     }

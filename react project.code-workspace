@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "D:/practic/react project"
+	},
+	{
+		"path": "."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "React_Complete_YouTube-main"
+  }
+}

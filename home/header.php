@@ -9,7 +9,7 @@
   <title>Products</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/header.css">
 
 
 </head>
@@ -41,7 +41,7 @@ if ($search) {
       <a class="action_container" href="../login.php">
         <span class="action_name">Login</span>
       </a>
-      <a onclick="loginmessage()" class="cart_btn"> <i class="fa-solid fa-cart-arrow-down"></i></a>
+      <a onclick="loginmessage()" class="cart_btn"><i class="fa-solid fa-cart-arrow-down"></i></a>
       <a  onclick="loginmessage()" class="Wish_btn"><i class="fa-solid fa-heart"></i></a>
     </div>
   </header>
@@ -56,7 +56,7 @@ if ($search) {
       <a href="contactus.php">Feedback</a>
     </nav>
     <div class="menu_icon">
-      <i class="fa-solid fa-bars"></i>
+      <i class="fa-solid fa-bars" alter="Menue"></i>
     </div>
   </div>
 

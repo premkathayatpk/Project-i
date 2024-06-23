@@ -73,11 +73,11 @@ if(isset($_GET['delete_all'])){
                   <td>
                      <form action="" method="post">
                         <input type="hidden" name="update_quantity_id"  value="<?php echo $fetch_cart['id']; ?>" >
-                        <input type="number" name="update_quantity" min="1"  value="<?php echo $fetch_cart['quantity']; ?>" >
+                        <input type="number" name="update_quantity" min="1" max="5" value="<?php echo $fetch_cart['quantity']; ?>" >
                         <input type="submit" value="Update" name="update_update_btn">
                      </form>   
                   </td>
-                  <td>$<?php echo $sub_total; ?>/-</td>
+                  <td>RS<?php echo $sub_total; ?>/-</td>
                   <td><a href="cart.php?remove=<?php echo $fetch_cart['id']; ?>" onclick="return confirm('Remove item from cart?')" class="delete-btn"><i class="fas fa-trash"></i> Remove</a></td>
                </tr>
                <?php
@@ -87,7 +87,7 @@ if(isset($_GET['delete_all'])){
                <tr class="table-bottom">
                   <td><a href="display.php" class="option-btn" style="margin-top: 0;">Continue Shopping</a></td>
                   <td colspan="3">Grand Total</td>
-                  <td>$<?php echo $grand_total; ?>/-</td>
+                  <td>RS<?php echo $grand_total; ?>/-</td>
                   <td><a href="cart.php?delete_all" onclick="return confirm('Are you sure you want to delete all?');" class="delete-btn"><i class="fas fa-trash"></i> Delete All</a></td>
                </tr>
             </tbody>

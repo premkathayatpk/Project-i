@@ -43,7 +43,7 @@ $stmt->close();
   <title>Shoes Store</title>
   <!-- Google Fonts Link For Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
   <!-- Header section -->
@@ -65,7 +65,7 @@ $stmt->close();
         <span class="action_name">Logout</span>
       </a>
       <a href="cart.php" class="cart_btn"> <i class="fa-solid fa-cart-arrow-down"></i></a>
-      <a href="wishlist.php" class="Wish_btn"><i class="fa-solid fa-heart"></i></a>
+      <a href="wishlist.php" class="Wish_btn"><i class="fa-solid fa-heart" alter="W"></i></a>
     </div>
   </header>
 
@@ -79,7 +79,7 @@ $stmt->close();
       <a href="contactus.php">Feedback</a>
     </nav>
     <div class="menu_icon">
-      <i class="fa-solid fa-bars"></i>
+      <i class="fa-solid fa-bars" alter="Menue"></i>
     </div>
   </div>
 

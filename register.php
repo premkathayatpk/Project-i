@@ -64,10 +64,10 @@
 
             if (!validatePhone(phone)) {
                 alert('Invalid phone number. It must be exactly 10 digits and start with 98.');
-                e.preventDefault(); // Prevent form submission
+                e.preventDefault();
             } else if (!validatePassword(password)) {
                 alert('Weak password, please enter a stronger password');
-                e.preventDefault(); // Prevent form submission
+                e.preventDefault(); 
             }
         });
 

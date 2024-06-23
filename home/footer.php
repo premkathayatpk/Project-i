@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/header.css">
 </head>
 
 <body>
@@ -31,11 +31,11 @@
         <div class="links">
           <a href="https://www.facebook.com/"> <img src="../images/links/fb.png" alt="Prem">
           </a>
-          <a href="https://www.facebook.com/"> <img src="../images/links/insta.jpg" alt="Prem">
+          <a href="https://www.instagram.com/"> <img src="../images/links/insta.jpg" alt="Prem">
           </a>
-          <a href="https://www.facebook.com/"> <img src="../images/links/linkedin.png" alt="Prem">
+          <a href="https://www.linkedin.com/"> <img src="../images/links/linkedin.png" alt="Prem">
           </a>
-          <a href="https://www.facebook.com/"> <img src="../images/links/github.png" alt="Prem">
+          <a href="https://www.github.com/"> <img src="../images/links/github.png" alt="Prem">
           </a>
         </div>
       </div>
@@ -55,11 +55,11 @@
         <div class="links">
           <a href="https://www.facebook.com/"> <img src="../images/links/fb.png" alt="Prem">
           </a>
-          <a href="https://www.facebook.com/"> <img src="../images/links/insta.jpg" alt="Prem">
+          <a href="https://www.instagram.com/"> <img src="../images/links/insta.jpg" alt="Prem">
           </a>
-          <a href="https://www.facebook.com/"> <img src="../images/links/linkedin.png" alt="Prem">
+          <a href="https://www.linkedin.com/"> <img src="../images/links/linkedin.png" alt="Prem">
           </a>
-          <a href="https://www.facebook.com/"> <img src="../images/links/github.png" alt="Prem">
+          <a href="https://www.github.com/"> <img src="../images/links/github.png" alt="Prem">
           </a>
         </div>
       </div>
@@ -69,7 +69,7 @@
     <hr>
 
     <div class="copyright">
-      © 2024 www.premkathayat.com.np All rights reserved.
+      © 2024 All rights reserved.
     </div>
   </footer>
 </body>
